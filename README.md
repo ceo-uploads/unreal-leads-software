@@ -1,13 +1,107 @@
-It is the Readme
+# 🌌 Unreal Leads v2.0
+### Next-Gen Lead Intelligence & Extraction Nexus
 
-Build Command -> 
+![Version](https://img.shields.io/badge/Version-2.0.0-indigo)
+![Architecture](https://img.shields.io/badge/Architecture-Fullstack--Vite-blue)
+![Database](https://img.shields.io/badge/Storage-SQLite--WASM-emerald)
+![Desktop](https://img.shields.io/badge/Desktop-Electron--Ready-slate)
+
+**Unreal Leads v2.0** is an elite-tier analytical dashboard and lead management system designed for high-frequency data extraction and intelligence gathering. Built with a "Security-First" philosophy and a brutalist-minimalist aesthetic, it provides seamless access to global lead repositories.
+
+---
+
+## 🚀 Key Features
+
+### 📡 Global Vault Synchronization
+Access multi-region intelligence nodes across **USA, UK, and Canada**. Switch between localized database fragments with zero latency using our SQLite-over-WASM architecture.
+
+### 🧠 Intelligent Table Architecture
+- **Deep-Rank Analysis:** Every lead is assigned a dynamic IQ rank based on data completeness.
+- **Responsive Interaction:** 
+  - 📧 **One-Click Contact:** Instant email launch for identified contacts.
+  - 🌐 **Web Interface:** Direct navigation to source URLs.
+  - 📞 **Comms Tunnel:** Integrated calling for verified mobile numbers.
+- **Smart Filtering:** Minimize the "Regional Vaults" sidebar for an expanded, distraction-free analysis environment.
+
+### 💾 Persistence & Organization
+- **Heart & Mark System:** Locally persist "Liked" and "Marked" leads to track high-value targets without server-side overhead.
+- **Advanced Querying:** Real-time database-wide searching with automated column indexing.
+
+### 💻 Hybrid Deployment
+Ready for both top-tier **Web Hosting** and **Electron Desktop** distribution (`.exe` ready for Windows).
+
+---
+
+## 🛠 Fundamental Technologies
+
+| Component | Technology | Role |
+| :--- | :--- | :--- |
+| **Frontend** | React 18 + Vite | High-performance reactive UI |
+| **Styling** | Tailwind CSS 4.0 | Cyberpunk/Brutalist design system |
+| **Motion** | Framer Motion | Fluid layout transitions & state awareness |
+| **Engine** | SQL.js (WASM) | Serverless relational database processing |
+| **Auth** | Firebase v10 | Secure identity management & session control |
+| **Desktop** | Electron | Cross-platform binary packaging |
+
+---
+
+## 📂 System Workflow
+
+```mermaid
+graph TD
+    A[Public/Databases/*.db] -->|Fetch| B(SQL.js WASM Engine)
+    B --> C{Intelligence Parser}
+    C -->|Emails| D[Contact Module]
+    C -->|URLs| E[Navigation Module]
+    C -->|Phones| F[Comms Module]
+    G[User Interaction] -->|Local Storage| H[Persistence Sync]
+
+
+Data Placement (Critical)
+To load your custom SQLite databases, place your .db files in the following directory structure:
+public/databases/USA/
+public/databases/UK/
+public/databases/Canada/
+2. Analysis & Extraction
+Select a region, choose a specialized node (database), and use the Master Query to isolate leads. Use the Mark button to shortlist and the Heart button to categorize high-priority intelligence.
+```
+
+🏗 Setup & Installation
+Web Development
+
+```
+# Install dependencies
 npm install
 
-Terminal Run ->
+# Start local intelligence nexus
 npm run dev
+```
 
-Electron Run ->
+Desktop Packaging (Electron)
+
+```
+# Launch Electron in development mode
 npm run electron:dev
 
-Electron Build ->
+# Build Windows .exe installer
 npm run electron:build
+```
+
+🔮 Future Intelligence Roadmap
+
+AI Enrichment: Integrate Gemini API to automatically categorize leads based on industry sentiment.
+
+Real-time Firebase Sync: Move Liked/Marked leads to cloud storage for cross-device synchronization.
+
+Global Export: Bulk extraction to CSV/Excel formats for CRM integration.
+
+Automated Scrapers: Build-in web scrapers to populate the .db files dynamically.
+🛡 Security Protocol
+Access is restricted to authorized personnel. System integrity is validated through Firebase Authentication. Any attempt to access the vault without valid credentials will trigger a Session Termination Overlay.
+Built by [Unreal Studio] - Redefining Lead Intelligence.
+
+### Key Changes Made to the Project:
+1.  **Database Path Correction:** Changed the `fetch` paths in `LeadsManager.tsx` to be relative (`databases/USA/filename.db`) to ensure they work correctly in both development (Vite) and production (Electron/Static Hosting).
+2.  **README Structure:** Added instructions on exactly where to place `.db` files (`public/databases/...`).
+3.  **Electron Setup:** Finalized the `main.cjs` and `package.json` configurations to ensure the app loads correctly (fixed the "Blue Screen" issue by setting `base: './'` in `vite.config.ts`).
+4.  **UI Refinement:** Ensured the sidebar can be collapsed and the interactions (Like/Mark) are saved locally using `localStorage`.
